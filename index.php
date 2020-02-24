@@ -1,7 +1,8 @@
 <?php
 
+$birth = date("Ymd");
+
 if ($_SERVER['REQUEST_METHOD'] === "POST") {
-    $birth = $_POST["year"] . $_POST["month"] . $_POST["day"];
     $px = $_POST["px"];
     $color_tmp = [];
     $color_hash = md5(str_shuffle($birth));
@@ -9,13 +10,12 @@ if ($_SERVER['REQUEST_METHOD'] === "POST") {
         $color_tmp[$i] = $color_hash[$i];
     $color = "#" . implode($color_tmp);
 } else {
-    $birth = "20200202";
     $px = 8;
     $color = "#b76fcc";
 }
 
 $timestamp = (string) time();
-$width = 250 / $px;
+$width = 200 / $px;
 $rowWidth = $width * $px;
 $hash;
 
@@ -167,39 +167,28 @@ for ($i = 0; $i < $px; $i++) {
                 </div>
             <?php endfor ?>
         </div>
-        <small class="px"><?php echo "$px x $px" ?></small>
+        <small class="px-size"><?php echo "$px x $px" ?></small>
 
         <form class="identicon-form" name="identicon_form" action="" method="post">
-            <h2 class="select-label">Input Any Date</h2>
-            <div class="birth-box">
-                <div class="birth-select birth">
-                    <select id="select_year" name="year" required></select>
-                </div>
-                <div class="birth-select birth">
-                    <select id="select_month" name="month" required></select>
-                </div>
-                <div class="birth-select birth">
-                    <select id="select_day" name="day" required></select>
-                </div>
-            </div>
-            <h2 class="select-label">Input Resolution</h2>
-            <div class="birth-box">
-                <div class="birth-select birth">
+            <h2 class="select-label">ピクセルを選択</h2>
+            <div class="px-box">
+                <div class="px-select px">
                     <select name="px" required>
-                        <option value="5">5 x 5</option>
-                        <option value="6">6 x 6</option>
-                        <option value="7">7 x 7</option>
-                        <option value="8" selected>8 x 8</option>
-                        <option value="9">9 x 9</option>
-                        <option value="10">10 x 10</option>
-                        <option value="11">11 x 11</option>
-                        <option value="12">12 x 12</option>
+                        <option value="" disabled style="display:none;" <?php if (empty($_POST['px'])) echo 'selected'; ?>>選択してください</option>
+                        <option value="5" <?php echo array_key_exists('px', $_POST) && $_POST['px'] == 5 ? 'selected' : ''; ?>>5 x 5</option>
+                        <option value="6" <?php echo array_key_exists('px', $_POST) && $_POST['px'] == 6 ? 'selected' : ''; ?>>6 x 6</option>
+                        <option value="7" <?php echo array_key_exists('px', $_POST) && $_POST['px'] == 7 ? 'selected' : ''; ?>>7 x 7</option>
+                        <option value="8" <?php echo array_key_exists('px', $_POST) && $_POST['px'] == 8 ? 'selected' : ''; ?>>8 x 8</option>
+                        <option value="9" <?php echo array_key_exists('px', $_POST) && $_POST['px'] == 9 ? 'selected' : ''; ?>>9 x 9</option>
+                        <option value="10" <?php echo array_key_exists('px', $_POST) && $_POST['px'] == 10 ? 'selected' : ''; ?>>10 x 10</option>
+                        <option value="11" <?php echo array_key_exists('px', $_POST) && $_POST['px'] == 11 ? 'selected' : ''; ?>>11 x 11</option>
+                        <option value="12" <?php echo array_key_exists('px', $_POST) && $_POST['px'] == 12 ? 'selected' : ''; ?>>12 x 12</option>
                     </select>
                 </div>
             </div>
-            <input class="submit-btn" type="submit" value="Regeneration">
+            <input class="submit-btn" type="submit" value="再生成する">
             <div class="button-box">
-                <a class="make-btn" onclick="makeIdenticon()">Download</a>
+                <a class="make-btn" onclick="makeIdenticon()">ダウンロード</a>
                 <a id="download" href="" download="identicon.png" hidden></a>
             </div>
         </form>

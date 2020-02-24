@@ -6,30 +6,31 @@ body {
 }
 
 .container {
-  padding: 30px;
-  background: rgba(255, 255, 255, 0.5);
+  padding-top: 30px;
+  padding-bottom: 50px;
+  background: rgba(214, 230, 132, 0.5);
 }
 
 .title {
-  font-size: 30px;
+  font-size: 35px;
   margin-top: 0;
   font-weight: bold;
-  color: #f1f1f1;
-  text-shadow: 1px 1px 1px #202429, 1px -1px 1px #202429, -1px 1px 1px #202429,
-    -1px -1px 1px #202429;
+  color: #e74c3c;
+  text-shadow: 1px 1px 1px #f1f1f1, 1px -1px 1px #f1f1f1, -1px 1px 1px #f1f1f1,
+    -1px -1px 1px #f1f1f1;
 }
 
 .identicon {
-  width: 250px;
-  height: 250px;
+  width: 200px;
+  height: 200px;
   margin: 0 auto;
   border: 15px solid #f1f1f1;
 }
 
-.px {
+.px-size {
   color: #f1f1f1;
-  text-shadow: 1px 1px 1px #202429, 1px -1px 1px #202429, -1px 1px 1px #202429,
-    -1px -1px 1px #202429;
+  text-shadow: 1px 1px 1px #e74c3c, 1px -1px 1px #e74c3c, -1px 1px 1px #e74c3c,
+    -1px -1px 1px #e74c3c;
   font-weight: bold;
 }
 
@@ -38,7 +39,7 @@ body {
 }
 
 /* .on {
-  background: #b76fcc;
+  background: #e74c3c;
 } */
 
 .off {
@@ -54,31 +55,32 @@ body {
  */
 
 .identicon-form {
-  margin: 20px auto;
+  margin: 35px auto;
 }
 
 .select-label {
   font-size: 18px;
+  margin-top: 20px;
   margin-bottom: 0;
-  color: #f1f1f1;
-  text-shadow: 1px 1px 1px #202429, 1px -1px 1px #202429, -1px 1px 1px #202429,
-    -1px -1px 1px #202429;
+  color: #fff;
+  text-shadow: 1px 1px 1px #e74c3c, 1px -1px 1px #e74c3c, -1px 1px 1px #e74c3c,
+    -1px -1px 1px #e74c3c;
   font-weight: bold;
 }
 
-.birth-box {
+.px-box {
   display: flex;
   justify-content: center;
 }
 
-.birth-select {
+.px-select {
   overflow: hidden;
-  width: 100px;
+  width: 200px;
   margin: 5px;
   text-align: center;
 }
 
-.birth-select select {
+.px-select select {
   width: 100%;
   padding-right: 1em;
   cursor: pointer;
@@ -94,19 +96,19 @@ body {
   appearance: none;
 }
 
-.birth-select select::-ms-expand {
+.px-select select::-ms-expand {
   display: none;
 }
 
-.birth-select.birth {
+.px-select.px {
   position: relative;
   border-radius: 2px;
-  border: 2px solid #b76fcc;
+  border: 2px solid #e74c3c;
   border-radius: 50px;
   background: #ffffff;
 }
 
-.birth-select.birth::before {
+.px-select.px::before {
   position: absolute;
   top: 0.8em;
   right: 0.8em;
@@ -116,13 +118,13 @@ body {
   content: "";
   border-left: 6px solid transparent;
   border-right: 6px solid transparent;
-  border-top: 6px solid #b76fcc;
+  border-top: 6px solid #e74c3c;
   pointer-events: none;
 }
 
-.birth-select.birth select {
+.px-select.px select {
   padding: 8px 38px 8px 8px;
-  color: #b76fcc;
+  color: #e74c3c;
 }
 
 /*
@@ -134,23 +136,24 @@ body {
 }
 
 .submit-btn {
+  -webkit-appearance: none;
   display: block;
   margin: 20px auto;
   font-family: "Federant";
   font-size: 16px;
   font-weight: bold;
-  color: #b76fcc;
+  color: #e74c3c;
   background: #fff;
-  border: 3px solid #b76fcc;
+  border: 3px solid #e74c3c;
   border-radius: 50px;
   cursor: pointer;
-  padding: 5px 20px;
+  padding: 8px 20px;
   transition: 0.3s;
 }
 
 .submit-btn:hover {
   color: #fff;
-  background: #b76fcc;
+  background: #e74c3c;
 }
 
 .make-btn {
@@ -159,8 +162,8 @@ body {
   margin: 0 auto;
   font-weight: bold;
   color: #fff;
-  background: #b76fcc;
-  border: 3px solid #b76fcc;
+  background: #e74c3c;
+  border: 3px solid #e74c3c;
   border-radius: 50px;
   cursor: pointer;
   padding: 5px 20px;
@@ -169,17 +172,15 @@ body {
 
 .make-btn:hover {
   color: #fff;
-  background: #b76fcc;
+  background: #e74c3c;
 }
 
 .submit-btn:hover + .button-box > .make-btn {
-  color: #b76fcc;
+  color: #e74c3c;
   background: #fff;
 }
 
 .twitter-link {
-  position: relative;
-  left: 40%;
   height: 28px;
   border-radius: 50px;
   padding: 10px 20px;
@@ -207,7 +208,7 @@ footer {
   justify-content: center;
   align-items: center;
   height: 15vh;
-  background: #b76fcc;
+  background: #e74c3c;
   color: #fff;
 }
 
